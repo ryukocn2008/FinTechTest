@@ -154,5 +154,10 @@ namespace DatabaseBasicTests
                 cbbTest.Items.Add(pair.Value);
             }
         }
+
+        private void cbbTest_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

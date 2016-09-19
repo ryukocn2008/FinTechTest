@@ -41,9 +41,10 @@
             this.cbbDatabase = new System.Windows.Forms.ComboBox();
             this.cbbDatabaseCategory = new System.Windows.Forms.ComboBox();
             this.grpTestSettings = new System.Windows.Forms.GroupBox();
+            this.txtQuery = new System.Windows.Forms.TextBox();
             this.lblSQL = new System.Windows.Forms.Label();
-            this.txtSQL = new System.Windows.Forms.TextBox();
             this.grpTestResult = new System.Windows.Forms.GroupBox();
+            this.lblTestResult = new System.Windows.Forms.Label();
             this.grpTestSelection.SuspendLayout();
             this.grpTestSettings.SuspendLayout();
             this.SuspendLayout();
@@ -80,6 +81,7 @@
             this.btnTest.TabIndex = 10;
             this.btnTest.Text = "Test";
             this.btnTest.UseVisualStyleBackColor = true;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
             // lblTest
             // 
@@ -178,7 +180,7 @@
             // 
             // grpTestSettings
             // 
-            this.grpTestSettings.Controls.Add(this.txtSQL);
+            this.grpTestSettings.Controls.Add(this.txtQuery);
             this.grpTestSettings.Controls.Add(this.lblSQL);
             this.grpTestSettings.Location = new System.Drawing.Point(328, 2);
             this.grpTestSettings.Name = "grpTestSettings";
@@ -187,31 +189,42 @@
             this.grpTestSettings.TabStop = false;
             this.grpTestSettings.Text = "Test Settings";
             // 
+            // txtQuery
+            // 
+            this.txtQuery.Location = new System.Drawing.Point(10, 38);
+            this.txtQuery.Multiline = true;
+            this.txtQuery.Name = "txtQuery";
+            this.txtQuery.Size = new System.Drawing.Size(420, 205);
+            this.txtQuery.TabIndex = 1;
+            // 
             // lblSQL
             // 
             this.lblSQL.AutoSize = true;
             this.lblSQL.Location = new System.Drawing.Point(7, 22);
             this.lblSQL.Name = "lblSQL";
-            this.lblSQL.Size = new System.Drawing.Size(31, 13);
+            this.lblSQL.Size = new System.Drawing.Size(38, 13);
             this.lblSQL.TabIndex = 0;
-            this.lblSQL.Text = "SQL:";
-            // 
-            // txtSQL
-            // 
-            this.txtSQL.Location = new System.Drawing.Point(10, 38);
-            this.txtSQL.Multiline = true;
-            this.txtSQL.Name = "txtSQL";
-            this.txtSQL.Size = new System.Drawing.Size(420, 205);
-            this.txtSQL.TabIndex = 1;
+            this.lblSQL.Text = "Query:";
             // 
             // grpTestResult
             // 
             this.grpTestResult.Location = new System.Drawing.Point(328, 257);
             this.grpTestResult.Name = "grpTestResult";
-            this.grpTestResult.Size = new System.Drawing.Size(440, 385);
+            this.grpTestResult.Size = new System.Drawing.Size(440, 236);
             this.grpTestResult.TabIndex = 2;
             this.grpTestResult.TabStop = false;
             this.grpTestResult.Text = "Test Results:";
+            // 
+            // lblTestResult
+            // 
+            this.lblTestResult.Font = new System.Drawing.Font("Viner Hand ITC", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTestResult.ForeColor = System.Drawing.Color.Red;
+            this.lblTestResult.Location = new System.Drawing.Point(374, 539);
+            this.lblTestResult.Name = "lblTestResult";
+            this.lblTestResult.Size = new System.Drawing.Size(298, 81);
+            this.lblTestResult.TabIndex = 3;
+            this.lblTestResult.Text = "OK";
+            this.lblTestResult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainForm
             // 
@@ -219,6 +232,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(770, 654);
+            this.Controls.Add(this.lblTestResult);
             this.Controls.Add(this.grpTestResult);
             this.Controls.Add(this.grpTestSettings);
             this.Controls.Add(this.grpTestSelection);
@@ -249,8 +263,9 @@
         private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.GroupBox grpTestSettings;
         private System.Windows.Forms.Label lblSQL;
-        private System.Windows.Forms.TextBox txtSQL;
+        private System.Windows.Forms.TextBox txtQuery;
         private System.Windows.Forms.GroupBox grpTestResult;
+        private System.Windows.Forms.Label lblTestResult;
     }
 }
 

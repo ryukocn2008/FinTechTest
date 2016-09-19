@@ -1,4 +1,5 @@
-﻿using DatabaseBasicTests.helpers;
+﻿using DatabaseBasicTests.Domains;
+using DatabaseBasicTests.helpers;
 using System;
 using System.Collections.Generic;
 using System.Data.Odbc;
@@ -50,9 +51,13 @@ namespace DatabaseBasicTests.Testers
 
                 OdbcDataReader reader = comm.ExecuteReader();
                 // Create a BindingSource from reader
+                List<TestTable> ret = new List<TestTable>();
 
 
 
+                BindingSource binding = new BindingSource();
+
+                
                 return true;
             }
             catch (Exception ex)

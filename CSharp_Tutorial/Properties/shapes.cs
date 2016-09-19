@@ -1,0 +1,65 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Properties
+{
+    public class Square : Shape
+    {
+        private int mySide;
+
+        public Square(int side, string id) : base(id)
+        {
+            mySide = side;
+        }
+
+        public override double Area
+        {
+            get
+            {
+                return mySide * mySide;
+            }
+        }
+    }
+
+    public class Circle : Shape
+    {
+        private int myRadius;
+
+        public Circle(int radius, string id) : base(id)
+        {
+            myRadius = radius;
+        }
+
+        public override double Area
+        {
+            get
+            {
+                return myRadius * myRadius * System.Math.PI;
+            }
+        }
+    }
+
+    public class Rectangle: Shape
+    {
+        private int myWidth;
+        private int myHeight;
+
+        public Rectangle(int width, int height, string id) : base(id)
+        {
+            myWidth = width;
+            myHeight = height;
+        }
+
+        public override double Area
+        {
+            get
+            {
+                return myWidth * myHeight;
+            }
+        }
+    }
+
+}
